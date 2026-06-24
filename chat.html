@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Chat</title>
+    
+    <link rel="stylesheet" href="chat.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #111;
+            color: white;
+        }
+        
+        /* Top Bar */
+        
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 18px;
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+        }
+        
+        .topbar h2 {
+            font-size: 22px;
+            color: #00c853;
+        }
+        
+        .icon {
+            font-size: 26px;
+            cursor: pointer;
+        }
+        
+        /* Search */
+        
+        .searchBox {
+            padding: 15px;
+        }
+        
+        .searchBox input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            background: #222;
+            color: white;
+            font-size: 16px;
+        }
+        
+        /* Friends */
+        
+        .friendsSection {
+            padding: 15px;
+        }
+        
+        #friendsCount {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .friendCard {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #1b1b1b;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .friendCard:hover {
+            background: #252525;
+        }
+        
+        .profile {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #00c853;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .info {
+            flex: 1;
+        }
+        
+        .info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .info p {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Mobile */
+        
+        @media(max-width:600px) {
+            
+            .topbar h2 {
+                font-size: 20px;
+            }
+            
+            .profile {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            /* Bottom Navigation */
+            
+            .bottomNav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 65px;
+                
+                background: #1b1b1b;
+                
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                border-top: 1px solid #333;
+            }
+            
+            .bottomNav button {
+                
+                background: none;
+                border: none;
+                color: white;
+                
+                font-size: 15px;
+                cursor: pointer;
+                
+            }
+            
+            .bottomNav button:active {
+                
+                color: #00c853;
+                
+            }
+            
+            body {
+                
+                padding-bottom: 75px;
+                
+            }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Top Bar -->
+    <header class="topbar">
+        
+        <div id="profileBtn" class="icon">
+            👤
+        </div>
+        
+        <h2>S Chat</h2>
+        
+        <div id="settingsBtn" class="icon">
+            ⚙️
+        </div>
+        
+    </header>
+    
+    <!-- Search -->
+<div class="searchBox" id="searchBox">
+
+    <input type="text"
+    id="searchFriend"
+    placeholder="Search Friends...">
+
+</div>
+    
+    <!-- Friends -->
+    <div class="friendsSection">
+        
+        <h3 id="friendsCount">
+            Friends - 0
+        </h3>
+        
+        <div id="friendsList">
+            
+            <div class="friendCard">
+                
+                <div class="profile">
+                    👤
+                </div>
+                
+                <div class="info">
+                    
+                    <h4>No Friends</h4>
+                    
+                    <p>
+                        Accept requests to start chatting
+                    </p>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <!-- Bottom Navigation -->
+    
+    <div class="bottomNav">
+        
+        <button id="homeNav">Home</button>
+        
+        <button id="chatNav">Chats</button>
+        
+    </div>
+    <script type="module" src="chat.js"></script>
+    
+</body>
+
+</html>
